@@ -25,7 +25,7 @@ io.on('connection', (socket) => {
     })
     //Listen to event name "send_message" to take data sent from client
     socket.on('send_message', (data) => {
-        //Broadcast is used to send to everyone except the sender
+        //Broadcast is used to send to everyone including the sender
         io.to(data.room).emit("receive_message", data);
     })
 
